@@ -16,13 +16,13 @@
     "@semantic-release/release-notes-generator": "^12.1.0"
   },
   "repository": {
-    "url": "https://github.com/jeanmartins7/jeanverso-spring-boot-library.git"
+    "url": "https://github.com/jeanmartins7/api-sankhya.git"
   },
   "release": {
     "branches": [
       "main"
     ],
-    "repositoryUrl": "https://github.com/jeanmartins7/jeanverso-spring-boot-library.git",
+    "repositoryUrl": "https://github.com/jeanmartins7/api-sankhya.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
