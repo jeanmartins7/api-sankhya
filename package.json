@@ -1,0 +1,38 @@
+{
+  "name": "semantic-release",
+  "version": "1.0.0",
+  "description": "semantic release example",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --watch server.js"
+  },
+  "author": "eduardo conti",
+  "license": "ISC",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0"
+  },
+  "repository": {
+    "url": "https://github.com/jeanmartins7/jeanverso-spring-boot-library.git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "repositoryUrl": "https://github.com/jeanmartins7/jeanverso-spring-boot-library.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/git",
+        {
+          "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
+}
