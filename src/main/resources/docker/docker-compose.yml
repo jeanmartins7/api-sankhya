@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  wildfly:
+    image: jboss/wildfly:latest  # Imagem oficial do WildFly
+    container_name: wildfly_server
+    environment:
+      - JAVA_OPTS=-Djava.version=17 -Djboss.http.port=8080  # Configura a versão do Java e a porta do WildFly
+    ports:
+      - "8080:8080"  # Expondo a porta 8080
+    volumes:
+      - ./target/backend-3.4.2.war:/opt/jboss/wildfly/standalone/deployments/backend-3.4.2.war # Mapeia o WAR gerado para o diretório de deploy do WildFly
+    networks:
+      - app-network
+    restart: always  # Restart sempre que o container falhar
+
+networks:
+  app-network:
+    driver: bridge
